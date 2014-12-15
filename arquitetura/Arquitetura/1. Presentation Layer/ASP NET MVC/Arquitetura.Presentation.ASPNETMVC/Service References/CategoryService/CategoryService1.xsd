@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Arquitetura.Service.DataTransferObject" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Arquitetura.Service.DataTransferObject" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfCategory">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Category" nillable="true" type="tns:Category" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCategory" nillable="true" type="tns:ArrayOfCategory" />
+  <xs:complexType name="Category">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CategoryID" type="xs:int" />
+      <xs:element minOccurs="0" name="CategoryName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Picture" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="products" nillable="true" type="tns:ArrayOfProduct" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Category" nillable="true" type="tns:Category" />
+  <xs:complexType name="ArrayOfProduct">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Product" nillable="true" type="tns:Product" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProduct" nillable="true" type="tns:ArrayOfProduct" />
+  <xs:complexType name="Product">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CategoryID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Discontinued" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ProductID" type="xs:int" />
+      <xs:element minOccurs="0" name="ProductName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QuantityPerUnit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReorderLevel" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="SupplierID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="UnitPrice" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="UnitsInStock" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="UnitsOnOrder" nillable="true" type="xs:short" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Product" nillable="true" type="tns:Product" />
+</xs:schema>

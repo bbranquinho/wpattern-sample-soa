@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C0372C38-960F-4EB4-9D25-17527163F70C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Arquitetura.Data</RootNamespace>
+    <AssemblyName>Arquitetura.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataContextInterfaces\INorthwindEntities.cs" />
+    <Compile Include="DataContext\NorthwindEntities.cs" />
+    <Compile Include="GenericRepositoryInterfaces\IRepository.cs" />
+    <Compile Include="GenericRepository\EntitySetDictionary.cs" />
+    <Compile Include="GenericRepository\Repository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepositoryInterfaces\ICategoryRepository.cs" />
+    <Compile Include="RepositoryInterfaces\ICustomerDemographicRespository.cs" />
+    <Compile Include="RepositoryInterfaces\ICustomerReposity.cs" />
+    <Compile Include="RepositoryInterfaces\IEmployeeRepository.cs" />
+    <Compile Include="RepositoryInterfaces\IOrderDetailRepository.cs" />
+    <Compile Include="RepositoryInterfaces\IOrderRepository.cs" />
+    <Compile Include="RepositoryInterfaces\IProductRepository.cs" />
+    <Compile Include="RepositoryInterfaces\IRegionRepository.cs" />
+    <Compile Include="RepositoryInterfaces\IShipperRepository.cs" />
+    <Compile Include="RepositoryInterfaces\ISupplierRepository.cs" />
+    <Compile Include="RepositoryInterfaces\ITerritoryRepository.cs" />
+    <Compile Include="Repository\CategoryRepository.cs" />
+    <Compile Include="Repository\CustomerDemographicRespository.cs" />
+    <Compile Include="Repository\CustomerReposity.cs" />
+    <Compile Include="Repository\EmployeeRepository.cs" />
+    <Compile Include="Repository\OrderDetailRepository.cs" />
+    <Compile Include="Repository\OrderRepository.cs" />
+    <Compile Include="Repository\ProductRepository.cs" />
+    <Compile Include="Repository\RegionRepository.cs" />
+    <Compile Include="Repository\ShipperRepository.cs" />
+    <Compile Include="Repository\SupplierRepository.cs" />
+    <Compile Include="Repository\TerritoryRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="NorthwindModel.edmx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="Template.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Template.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\4. Business Layer\Arquitetura.Business\Arquitetura.Business.csproj">
+      <Project>{2ED5C6AC-BBE6-4280-8EF0-AE0963287B0F}</Project>
+      <Name>Arquitetura.Business</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
